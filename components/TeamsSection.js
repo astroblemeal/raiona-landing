@@ -1,6 +1,7 @@
 import { useState, Children } from "react";
 import styles from "../styles/Teams.module.css";
 import { teamPeople } from "../data/teams.js";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function TeamsSection() {
   return (
@@ -20,6 +21,7 @@ export default function TeamsSection() {
 }
 
 function Person({ src, name, position, ModalText }) {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -29,7 +31,7 @@ function Person({ src, name, position, ModalText }) {
       style={{
         transform: isFlipped ? "rotateY(360deg)" : "rotateY(0deg)",
       }}>
-      {isFlipped ? (
+      {isFlipped && isDesktop ? (
         <>
           <h5>{name}</h5>
           {ModalText()}

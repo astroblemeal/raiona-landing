@@ -14,11 +14,6 @@ export default function About() {
       </Head>
       <Canvas />
       <Navbar />
-      <center style={{ marginBottom: "100px" }}>
-        <h1>
-          About <span style={{ color: "#cca354" }}>Raiona </span>
-        </h1>
-      </center>
       <AboutSection />
       <Footer />
     </div>
