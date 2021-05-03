@@ -29,9 +29,9 @@ function Person({ src, name, position, ModalText }) {
       className={styles.person}
       onClick={() => setIsFlipped((prev) => !prev)}
       style={{
-        transform: isFlipped ? "rotateY(360deg)" : "rotateY(0deg)",
+        transform: isFlipped && isDesktop ? "rotateY(360deg)" : "rotateY(0deg)",
       }}>
-      {isFlipped && isDesktop ? (
+      {isFlipped ? (
         <>
           <h5>{name}</h5>
           {ModalText()}
